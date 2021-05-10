@@ -46,8 +46,7 @@ app.post('/register',register.handleRegister(db, bcrypt, saltRounds));
 app.get('/profile/:id',(req, res) => {profileGet.handleProfile(req, res, db)});
 
 app.put('/image',(req, res) => {image.handleImage(req, res, db)});
-app.post('/clarifai',(req, res) => {image.handleApiCall(req, res)});
-
+app.post('/clarifai',(req, res) => {image.handleApiCall(req, res)}); 
 app.listen(process.env.PORT || 3001,()=>{
-    console.log('server is up and rung at port 3001');
+    console.log(`server is up and rung at port ${process.env.PORT}`);
 });
