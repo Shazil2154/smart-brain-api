@@ -1,6 +1,6 @@
-const handleRegister = ( db, bcrypt) => (req, res) => {
+const handleRegister = ( db, bcrypt, saltRounds) => (req, res) => {
     const {name, email, password} = req.body;
-    if(!name || !email || !password){
+    if(!email || !name || !password){
         return res.status(400).json('incorrect form submittion');
     }
     db.transaction(trx => {
