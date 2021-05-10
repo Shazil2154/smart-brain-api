@@ -11,9 +11,10 @@ const saltRounds = 10;
 const db = knex({
   client: 'pg',
   connection: {
-    host : process.env.DATABASE_URL,
+    connectionString: process.env.DATABASE_URL,
     ssl: true,
     //for local host
+    //host : 127.0.0.1,
     // user : 'shazil',
     // password : 'test',
     // database : 'smart-brain'
